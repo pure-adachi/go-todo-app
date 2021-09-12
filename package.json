@@ -1,0 +1,11 @@
+{
+  "name": "go-todo-app",
+  "version": "0.1.0",
+  "scripts": {
+    "dc-build": "docker compose build --no-cache",
+    "dc-up": "docker compose up -d",
+    "dc-stop": "docker compose stop",
+    "dc-logs": "docker compose logs -f",
+    "modules": "docker compose run front yarn"
+  }
+}

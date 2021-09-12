@@ -1,0 +1,16 @@
+version: "3"
+services:
+  front:
+    build: ./projects/go-todo-client/
+    command: yarn start
+    volumes:
+      - ./projects/go-todo-client/:/myapp/frontend
+    ports:
+      - "3000:3000"
+  back:
+    build: ./projects/go-todo-api/
+    command: go run cmd/main.go
+    volumes:
+      - ./projects/go-todo-api/:/myapp/backend
+    ports:
+      - "8000:8000"
