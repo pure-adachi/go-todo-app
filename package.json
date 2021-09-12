@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "scripts": {
     "dc-build": "docker compose build --no-cache",
+    "dc-setup": "yarn go-build && yarn modules",
     "dc-up": "docker compose up -d",
     "dc-stop": "docker compose stop",
     "dc-logs": "docker compose logs -f",
+    "go-build": "docker compose run back go build cmd/main.go",
     "modules": "docker compose run front yarn"
   }
 }

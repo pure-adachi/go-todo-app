@@ -8,9 +8,14 @@ services:
     ports:
       - "3000:3000"
   back:
-    build: ./projects/go-todo-api/
-    command: go run cmd/main.go
+    build:
+      context: ./projects/go-todo-api/
+      target: builder
+    command: air
     volumes:
       - ./projects/go-todo-api/:/myapp/backend
     ports:
       - "8000:8000"
+    environment:
+      - PORT=8000
+      - CORS_ORIGIN=http://localhost:3000
