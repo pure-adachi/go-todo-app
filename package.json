@@ -7,7 +7,7 @@
     "dc-up": "docker compose up -d",
     "dc-stop": "docker compose stop",
     "dc-logs": "docker compose logs -f",
-    "go-build": "docker compose run back go build cmd/main.go",
-    "modules": "docker compose run front yarn"
+    "go-build": "docker compose run --rm back go build cmd/main.go",
+    "modules": "docker compose run --rm front yarn"
   }
 }

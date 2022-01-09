@@ -19,3 +19,17 @@ services:
     environment:
       - PORT=8000
       - CORS_ORIGIN=http://localhost:3000
+    depends_on:
+      - postgres
+  postgres:
+    build: db
+    volumes:
+      - postgresql-data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=go-todo-api-db
+volumes:
+  postgresql-data:
