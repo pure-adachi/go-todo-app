@@ -2,7 +2,7 @@
   "name": "go-todo-app",
   "version": "0.1.0",
   "scripts": {
-    "setup": "mkdir -p projects && yarn clone",
+    "setup": "mkdir -p projects && yarn clone && yarn dc-build && yarn dc-setup",
     "clone": "yarn clone-client && yarn clone-api",
     "clone-client": "cd projects && git clone https://github.com/pure-adachi/go-todo-client.git",
     "clone-api": "cd projects && git clone https://github.com/pure-adachi/go-todo-api.git",
